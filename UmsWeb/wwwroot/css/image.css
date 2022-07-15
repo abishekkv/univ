@@ -1,0 +1,8 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background: url("~/Images/university.png");
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}

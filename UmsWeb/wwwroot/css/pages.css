@@ -1,0 +1,123 @@
+﻿@import url('pages.css');
+body {
+}
+h1 {
+    color: darkblue;
+    ;
+}
+
+.btn {
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+    .btn:hover {
+        background-color: skyblue;
+        color: white;
+    }
+
+.form-control {
+    border-radius: 25px;
+    background-color: skyblue;
+}
+
+body {
+    background-color: lightskyblue;
+    border-bottom: 2px solid darkblue;
+}
+
+.text-primary {
+    color: darkblue;
+}
+h1 {
+    color: darkblue;
+    ;
+}
+
+.btn {
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+    .btn:hover {
+        background-color: skyblue;
+        color: white;
+    }
+
+.form-control {
+    border-radius: 25px;
+    background-color: skyblue;
+}
+
+body {
+    background-color: lightskyblue;
+    border-bottom: 2px solid darkblue;
+}
+
+.text-primary {
+    color: darkblue;
+}
+
+.table-bordered {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+}
+
+    .table-bordered thead tr {
+        background-color: lavender;
+        color: darkblue;
+        text-align: right;
+        font-weight: bold;
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+        padding: 12px 15px;
+    }
+
+.table-bordered {
+    border-bottom: 1px solid #dddddd;
+}
+
+.page {
+    background-color: lightskyblue;
+}
+
+.js {
+    color: aliceblue;
+}
+
+body {
+    background-color: lightskyblue;
+}
+
+.table-bordered tbody tr:nth-of-type(even) {
+    background-color: cadetblue;
+    font-weight: bold;
+}
+
+.table-bordered tbody tr:last-of-type {
+    border-bottom: 2px solid darkblue;
+}
+
+.btn {
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+    .btn:hover {
+        background-color: skyblue;
+        color: white;
+    }
+

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<style>
+    body{
+            background-image: url('../images/uni.jpg');
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position:center;
+    }
+</style>
+
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] University Management System</title>
+    <link rel="stylesheet" href="~/css/pages.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/site.css"  type="text/css" />
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="~/UmsWeb.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="Student" asp-controller="Home" asp-action="Index"><img src="https://media.istockphoto.com/vectors/university-campus-logo-with-text-space-for-your-slogan-tag-line-vector-id1135962989?k=20&m=1135962989&s=612x612&w=0&h=vTwS3yYH2GygqmN1NdTGZvlVbs_OYUpxxa5yEs28Ycg="style="float:left;width:128px;height:128px;"/></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse " id="navbarColor03">
+                        <ul class="navbar-nav flex-grow-1">
+                        
+                        @if(User.IsInRole("user"))
+                        {
+                           @*<li>
+                               <a class="nav-link dark-text" asp-area="Admin" asp-controller="Account" asp-action="StudentDetail">
+
+                               </a>                           
+                           </li>*@
+                        }
+                        </ul>
+                        <ul class="navbar-nav flex-grow-1">
+                        @if (User.IsInRole("admin"))
+                        {
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Course" asp-action="Index">Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Department" asp-action="Index">Department</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Fees" asp-action="Index">Fees</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Subject" asp-action="Index">Subjects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Teacher" asp-action="Index">Staff</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Student" asp-action="Index">Student</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Account" asp-action="Login">Logout</a>
+                            </li>
+                        }
+                    </ul>
+
+                    @*<partial name="_LoginPartial" />*@
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+            <partial name="_Notification" />
+        </main>
+    </div>
+
+   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

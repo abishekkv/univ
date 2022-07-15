@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .table-bordered{
+        border-collapse:collapse;
+        margin:25px 0;
+        font-size:0.9em;
+        min-width:400px;
+        color:black;
+    }
+
+    .table-bordered thead tr{
+        background-color:lavender;
+        color:darkblue;
+        text-align:right;
+        font-weight:bold;
+    }
+    .table-bordered th,
+    .table-bordered td{
+        padding:12px 15px;
+
+    }
+
+    .table-bordered  {
+        border-bottom:1px solid #dddddd;                
+    }
+
+    .page{
+        background-color:lightskyblue;
+    }
+
+    .js{
+        color:black;
+    }
+    body{
+        background-color:lightskyblue;
+    }
+    .table-bordered tbody tr:nth-of-type(even){
+        background-color:cadetblue;
+        font-weight:bold;
+        color:black;
+    }
+    .table-bordered tbody tr:last-of-type{
+        border-bottom:2px solid darkblue;
+        color:black;
+    }
+
+    .btn {
+        border-radius:25px;
+        width: 200px;
+        height: 50px;
+        text-align:center;
+        transition-duration:0.4s;
+
+    }
+    .btn:hover{
+        background-color:skyblue;
+        color:white;
+    }
+    h1{
+        color:Black;;
+    }
+</style>
+
+<h1>Department</h1>
+<a asp-action="Create" asp-controller="Department" asp-area="Admin" class="btn btn-primary">Create</a>
+<table id="tblData" class="table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Department Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    @*<tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td>@obj.Name</td>
+                <td>
+                    <a asp-controller="Department" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-warning">Edit</a>
+                </td>
+                <td>
+                    <a asp-controller="Department" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-warning">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>*@
+</table>
+@section Scripts{
+    <script src="~/js/Department.js"></script>
+}

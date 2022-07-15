@@ -1,0 +1,108 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    h1{
+        color:darkblue;;
+    }
+    .btn {
+        border-radius:25px;
+        width: 200px;
+        height: 50px;
+        text-align:center;
+        transition-duration:0.4s;
+
+    }
+    .btn:hover{
+        background-color:skyblue;
+        color:white;
+    }
+    .form-control{
+        border-radius:25px;
+        background-color:skyblue;
+    }
+    body{
+        background-color:lightskyblue;
+         border-bottom:2px solid darkblue;
+    }
+    .text-primary{
+        color:darkblue;
+    }
+</style>
+
+<h2>Edit Student</h2>
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pt-2">
+            <h2 class="text-primary">Edit Student</h2>
+            <hr>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="FatherName"></label>
+            <input asp-for="FatherName" />
+            <span asp-validation-for="FatherName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="MotherName"></label>
+            <input asp-for="MotherName" />
+            <span asp-validation-for="MotherName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DOB"></label>
+            <input asp-for="DOB" />
+            <span asp-validation-for="DOB" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Address"></label>
+            <input asp-for="Address" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Sex"></label>
+            <input asp-for="Sex" />
+            <span asp-validation-for="Sex" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Semester"></label>
+            <input asp-for="Semester" class="from-control" />
+            <span asp-validation-for="Semester" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="YearOfJoining"></label>
+            <input asp-for="YearOfJoining" class="from-control" />
+            <span asp-validation-for="YearOfJoining" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CourseId"></label>
+            <input asp-for="CourseId" required readonly class="from-control" />
+            <span asp-validation-for="CourseId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DepartmentId"></label>
+            <input asp-for="DepartmentId" required readonly class="from-control" />  
+            <span asp-validation-for="DepartmentId" class="text-danger"></span>
+        </div>
+        <button tye="submit" class="btn btn-primary">Update</button>
+        <a asp-area="Admin" asp-controller="Student" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>
+@section scripts{
+    <partial name="_validationScriptsPartial.cshtml" />
+}
+ 

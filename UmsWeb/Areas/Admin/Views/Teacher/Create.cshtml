@@ -1,0 +1,103 @@
+﻿@model UmsWeb.Models.ViewModels.TeacherVM
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    h1{
+        color:darkblue;;
+    }
+    .btn {
+        border-radius:25px;
+        width: 200px;
+        height: 50px;
+        text-align:center;
+        transition-duration:0.4s;
+
+    }
+    .btn:hover{
+        background-color:skyblue;
+        color:white;
+    }
+    .form-control{
+        border-radius:25px;
+        background-color:skyblue;
+    }
+    body{
+        background-color:lightskyblue;
+         border-bottom:2px solid darkblue;
+    }
+    .text-primary{
+        color:darkblue;
+    }
+    input{
+        text-align : center;
+        display : block;
+        width : 60%;
+
+    }
+</style>
+
+<h2>Create Instructor</h2>
+<form method="post">
+    <input asp-for="Instructor.Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pt-2">
+            <h2 class="text-primary">Add Staff</h2>
+            <hr>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Instructor.Name"></label>
+            <input asp-for="Instructor.Name" />
+            <span asp-validation-for="Instructor.Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Instructor.Address"></label>
+            <input asp-for="Instructor.Address" />
+            <span asp-validation-for="Instructor.Address" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Instructor.Email"></label>
+            <input asp-for="Instructor.Email" />
+            <span asp-validation-for="Instructor.Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Instructor.Phone"></label>
+            <input asp-for="Instructor.Phone" />
+            <span asp-validation-for="Instructor.Phone" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Instructor.DOB"></label>
+            <input asp-for="Instructor.DOB" />
+            <span asp-validation-for="Instructor.DOB" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Instructor.DOJ"></label>
+            <input asp-for="Instructor.DOJ" />
+            <span asp-validation-for="Instructor.DOJ" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Instructor.DepartmentId"></label>
+            <select asp-for="Instructor.DepartmentId" asp-items="@Model.DepartmentList" class="from-control">
+             <option disabled selected>--Select Category--</option>
+             </select>
+            <span asp-validation-for="Instructor.DepartmentId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Instructor.CourseId"></label>
+            <select asp-for="Instructor.CourseId" asp-items="@Model.CourseList" class="from-control">
+             <option disabled selected>--Select Category--</option>
+             </select>
+            <span asp-validation-for="Instructor.CourseId" class="text-danger"></span>
+        </div>
+        <button tye="submit" class="btn btn-primary">Create</button>
+        <a asp-area="Admin" asp-controller="Teacher" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>
+@section scripts{
+    <partial name="_validationScriptsPartial.cshtml" />
+}

@@ -1,0 +1,71 @@
+﻿@model Users
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .h11{
+        text-align:center;
+        text-emphasis-style:double-circle;
+        font-size:45px;
+        margin-bottom:80px;
+    }
+
+    .form-control{
+        opacity:0.75;
+        border-radius:4px;
+        text-align:left;
+        background-color:lightgray;;
+    }
+    .btn-primary{
+        border-radius:4px;
+    }
+
+    .container{
+        width:400px;
+        margin:auto;
+        border-radius:25px;
+        background-color:rgba(0,0,0,0.1);
+        opacity:0.5px;
+        align-content:center;
+    }
+    
+    .btn-primary{
+        font-weight:bold;
+    }
+    .h11{
+        color:darkgray;
+        text-align:center;
+    }
+
+</style>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+<h1 class="h11">Login</h1>
+<div class="container">
+<form method="post" class="form-control">
+    <div class="breadcrumb">
+@*        <label asp-for="Username">Username</label>
+*@        <input asp-for="Username" class="form-control" placeholder="UserName"  />
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div class="breadcrumb">
+@*        <label asp-for="Password">Password</label>
+*@        <input asp-for="Password" class="form-control" placeholder="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <button type="submit" class="btn-primary">Login</button>
+
+</form>
+</div>

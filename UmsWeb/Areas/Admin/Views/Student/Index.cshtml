@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .table-bordered{
+        border-collapse:collapse;
+        margin:25px 0;
+        font-size:0.9em;
+        min-width:400px;
+        color:black;
+    }
+
+    .table-bordered thead tr{
+        background-color:lavender;
+        color:darkblue;
+        text-align:right;
+        font-weight:bold;
+    }
+    .table-bordered th,
+    .table-bordered td{
+        padding:12px 15px;
+
+    }
+
+    .table-bordered  {
+        border-bottom:1px solid #dddddd;                
+    }
+
+    .page{
+        background-color:lightskyblue;
+    }
+
+    .js{
+        color:aliceblue;
+    }
+    body{
+        background-color:lightskyblue;
+    }
+    .table-bordered tbody tr:nth-of-type(even){
+        background-color:cadetblue;
+        font-weight:bold;
+    }
+    .table-bordered tbody tr:last-of-type{
+        border-bottom:2px solid darkblue;
+    }
+
+    .btn {
+        border-radius:25px;
+        width: 200px;
+        height: 50px;
+        text-align:center;
+        transition-duration:0.4s;
+
+    }
+    .btn:hover{
+        background-color:skyblue;
+        color:white;
+    }
+    h1{
+        color:darkblue;;
+    }
+</style>
+
+<h1>Student Details</h1>
+<a asp-area="Admin" asp-controller="Student" asp-action="Create" class="btn btn-primary">Create</a>
+<table id="tblData" class="table-bordered all table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Father Name</th>
+            <th>Mother Name</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Number of Semesters</th>
+            <th>Year of Joining</th>
+            <th>Department</th>
+            <th>Course</th>
+            <th></th>
+        </tr>
+    </thead>
+    @*<tbody>
+        @foreach(var ins in Model)
+        {
+            <tr>
+                <td>@ins.User.Username</td>
+                <td>@ins.Name</td>
+                <td>@ins.FatherName</td>
+                <td>@ins.MotherName</td>
+                <td>@ins.DOB</td>
+                <td>@ins.Address</td>
+                <td>@ins.Email</td>
+                <td>@ins.Sex</td>
+                <td>@ins.Semester</td>
+                <td>@ins.YearOfJoining</td>
+                <td>@ins.Department.Name</td>
+                <td>@ins.Course.Name</td>
+                <td>
+                   <a asp-controller="Student" asp-action="Edit" asp-route-id="@ins.Id" class="btn btn-warning">Edit</a>
+                </td>
+                <td>
+                    <a asp-controller="Student" asp-action="Delete" asp-route-id="@ins.Id" class="btn btn-warning">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>*@
+</table>
+@section Scripts{
+    <script src="~/js/Students.js"></script>
+}
+

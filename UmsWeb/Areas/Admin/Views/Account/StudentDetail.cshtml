@@ -1,0 +1,55 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    
+       .table-bordered all table-striped{
+        color:black;
+    }
+    .table-bordered{
+        color:black;
+
+    }
+</style>
+<h1>Student Details</h1>
+<table id="tblData" class="table-bordered all table-striped" >
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Father Name</th>
+            <th>Mother Name</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Number of Semesters</th>
+            <th>Year of Joining</th>
+            <th>Department</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.User.Username</td>
+            <td>@Model.Name</td>
+            <td>@Model.FatherName</td>
+            <td>@Model.MotherName</td>
+            <td>@Model.DOB</td>
+            <td>@Model.Address</td>
+            <td>@Model.Email</td>
+            <td>@Model.Sex</td>
+            <td>@Model.Semester</td>
+            <td>@Model.YearOfJoining</td>
+            <td>@Model.Department.Name</td>
+            <td>@Model.Course.Name</td>
+            </tr>
+            
+       </tbody>
+</table>
+<a asp-area="Admin" asp-controller="Account" asp-action="Login" class="btn btn-secondary" style="width:150px">
+    Logout
+</a>
+

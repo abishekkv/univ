@@ -1,0 +1,54 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    h1{
+        color:darkblue;;
+    }
+    .btn {
+        border-radius:25px;
+        width: 200px;
+        height: 50px;
+        text-align:center;
+        transition-duration:0.4s;
+
+    }
+    .btn:hover{
+        background-color:skyblue;
+        color:white;
+    }
+    .form-control{
+        border-radius:25px;
+        background-color:skyblue;
+    }
+    body{
+        background-color:lightskyblue;
+         border-bottom:2px solid darkblue;
+    }
+    .text-primary{
+        color:darkblue;
+    }
+</style>
+
+<h1>Edit</h1>
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pt-2">
+            <h2 class="text-primary">Edit Item</h2>
+            <hr>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="from-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <button tye="submit" class="btn btn-primary">Update</button>
+        <a asp-area="Admin" asp-controller="Course" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>
+
